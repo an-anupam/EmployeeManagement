@@ -1,0 +1,17 @@
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.csproj.AssemblyReference.cache
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.AssemblyInfoInputs.cache
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.AssemblyInfo.cs
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\bin\Debug\net8.0\EmpMan.DataAccess.deps.json
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\bin\Debug\net8.0\EmpMan.DataAccess.runtimeconfig.json
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\bin\Debug\net8.0\EmpMan.DataAccess.dll
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\bin\Debug\net8.0\EmpMan.DataAccess.pdb
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\bin\Debug\net8.0\EmpMan.Models.dll
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\bin\Debug\net8.0\EmpMan.Models.pdb
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.csproj.CopyComplete
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.dll
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\refint\EmpMan.DataAccess.dll
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.pdb
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.genruntimeconfig.cache
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\ref\EmpMan.DataAccess.dll
