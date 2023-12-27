@@ -1078,7 +1078,10 @@
         },
         "runtime": {
           "bin/placeholder/EmpMan.Models.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },

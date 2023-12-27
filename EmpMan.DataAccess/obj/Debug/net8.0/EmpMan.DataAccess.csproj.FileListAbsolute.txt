@@ -15,3 +15,4 @@ C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\De
 C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.pdb
 C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.genruntimeconfig.cache
 C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\ref\EmpMan.DataAccess.dll
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.DataAccess\obj\Debug\net8.0\EmpMan.DataAccess.sourcelink.json

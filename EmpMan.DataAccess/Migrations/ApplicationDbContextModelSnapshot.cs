@@ -146,6 +146,65 @@ namespace EmpMan.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("EmpMan.Models.Skill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PrimarySkill")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SecondarySkill")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("experienceInSkill")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ratingsInSkill")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Skills");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PrimarySkill = "Java",
+                            SecondarySkill = "JavaScript",
+                            experienceInSkill = 3,
+                            ratingsInSkill = 7
+                        },
+                        new
+                        {
+                            Id = 2,
+                            PrimarySkill = "C++",
+                            SecondarySkill = "Swift",
+                            experienceInSkill = 2,
+                            ratingsInSkill = 6
+                        },
+                        new
+                        {
+                            Id = 3,
+                            PrimarySkill = "C#",
+                            SecondarySkill = "JavaScript",
+                            experienceInSkill = 1,
+                            ratingsInSkill = 8
+                        },
+                        new
+                        {
+                            Id = 4,
+                            PrimarySkill = "Python",
+                            SecondarySkill = "Java",
+                            experienceInSkill = 2,
+                            ratingsInSkill = 7
+                        });
+                });
+
             modelBuilder.Entity("EmpMan.Models.Employee", b =>
                 {
                     b.HasOne("EmpMan.Models.Department", "Department")

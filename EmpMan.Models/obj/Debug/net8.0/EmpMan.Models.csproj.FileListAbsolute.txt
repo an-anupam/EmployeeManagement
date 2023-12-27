@@ -12,3 +12,4 @@ C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.Models\obj\Debug\
 C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.Models\obj\Debug\net8.0\EmpMan.Models.pdb
 C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.Models\obj\Debug\net8.0\EmpMan.Models.genruntimeconfig.cache
 C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.Models\obj\Debug\net8.0\ref\EmpMan.Models.dll
+C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmpMan.Models\obj\Debug\net8.0\EmpMan.Models.sourcelink.json

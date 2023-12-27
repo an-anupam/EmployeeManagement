@@ -1,5 +1,5 @@
-// using Bulky.DataAccess.Repositories.Repository;
-// using Bulky.DataAccess.Repositories;
+using EmpMan.DataAccess.Repositories.Repository;
+using EmpMan.DataAccess.Repositories;
 using EmpMan.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,9 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//
  builder.Services.AddDbContext<ApplicationDbContext>(options => 
       options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+//
 
 var app = builder.Build();
 
@@ -35,6 +39,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area=User}/{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();
