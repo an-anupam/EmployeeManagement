@@ -1,0 +1,78 @@
+@* @model Bulky.Models.Category *@
+@* @model Bulky.Models *@
+@* @using Bulky.Models *@
+@model Employee
+
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-success bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Delete Employee</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4">
+        <form method="post" class="row">
+            <input asp-for="Id" hidden />
+            <div class=" border p-3 mt-4">
+                @* <div asp-validation-summary="ModelOnly"></div> *@
+
+                <div class= py-2 col-12">
+                    <label asp-for="FirstName" class="ms-2"></label>
+                    <input asp-for="FirstName" class="form-control border-0 shadow" />
+
+                    @* <Span asp-validation-for="FirstName" class="text-danger"></Span> *@
+                </div>
+
+                <div class=" py-2 col-12">
+                    <label asp-for="LastName" class="ms-2"></label>
+                    <input asp-for="LastName" class="form-control border-0 shadow">
+
+                    @* <Span asp-validation-for="LastName" class="text-danger"></Span> *@
+                </div>
+
+                <div class=" py-2 col-12">
+                    <label asp-for="DOJ" class="ms-2"></label>
+                    <input asp-for="DOJ" class="form-control border-0 shadow">
+
+                    @* <Span asp-validation-for="DOJ" class="text-danger"></Span> *@
+                </div>
+
+                <div class=" py-2 col-12">
+                    <label asp-for="Designation" class="ms-2"></label>
+                    <input asp-for="Designation" class="form-control border-0 shadow">
+
+                    @* <Span asp-validation-for="Designation" class="text-danger"></Span> *@
+                </div>
+
+                <div class=" py-2 col-12">
+                    <label asp-for="Email" class="ms-2"></label>
+                    <input asp-for="Email" class="form-control border-0 shadow">
+
+                    @* <Span asp-validation-for="Email" class="text-danger"></Span> *@
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-danger form-control">Delete</button>
+
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="EmployeeManage" asp-action="Index"
+                            class="btn btn-outline-success form-control">
+                            Back To List
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    @* @section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial.cshtml"/>
+    }
+    } *@

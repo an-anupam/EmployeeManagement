@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using EmpMan.DataAccess.Data;
 using EmpMan.DataAccess.Repositories.Repository;
 using EmpMan.Models;
+using EmpMan.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 
 
@@ -24,29 +26,119 @@ namespace EmployeeMang.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<Employee> objEmployeeList = _unitOfWork.Employee.GetAll().ToList();
+            List<Employee> objEmployeeList = _unitOfWork.Employee.GetAll(includeProperties: "Department").ToList();
             return View(objEmployeeList);
         }
 
-        public IActionResult Create()
+        public IActionResult Upsert(int? id)
         {
-            return View();
+            EmployeeVM employeeVM = new()
+            {
+                DepartmentList = _unitOfWork.Department.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                }),
+                Employee = new Employee()
+            };
+            if(id == null || id == 0)
+            {
+                //create
+                return View(employeeVM);
+            }
+            else
+            {
+                //update
+                employeeVM.Employee = _unitOfWork.Employee.Get(u=>u.Id == id);
+                return View(employeeVM);
+            }
         }
 
-        // [HttpPost]
-        // public IActionResult Create(Employee obj)
-        // {
-            // if (obj.Name == obj.DisplayOrder.ToString())
-            // {
-            //     ModelState.AddModelError("name", "The Display Order Can't be exactly match with Name");
+        [HttpPost]
+        public IActionResult Upsert(EmployeeVM employeeVM)
+        {
+
+            //No Need For Custom Validation in  TItle
+            // if(obj.Name != null && obj.Name.ToLower() == "test"){
+            //      ModelState.AddModelError("","Test is an invalid value");
             // }
-            // if(ModelState.IsValid){
-            //     _db.Employees.Add(obj);
-            //     _db.SaveChanges();
-            //     return RedirectToAction("Index", "EmployeeManage");
-            // }
-        //     return View();
-        // }
+            if (ModelState.IsValid)
+            {
+                // string wwwRootPath = _webHostEnvironment.WebRootPath;
+                // if (file != null)
+                // {
+                //     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                //     string productPath = Path.Combine(wwwRootPath, @"images\product");
+                    
+                //     if(!string.IsNullOrEmpty(productVM.Product.ImageUrl))
+                //     {
+                //         var oldImagePath = Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
+                //         if(System.IO.File.Exists(oldImagePath))
+                //         {
+                //             System.IO.File.Delete(oldImagePath);
+                //         }
+                //     }
+
+                //     using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                //     {
+                //         file.CopyTo(fileStream);
+                //     }
+
+                //     productVM.Product.ImageUrl = @"\images\product\" + fileName;
+                // }
+
+                if(employeeVM.Employee.Id == 0){
+                   _unitOfWork.Employee.Add(employeeVM.Employee);
+                }
+                else{
+                    _unitOfWork.Employee.Update(employeeVM.Employee); 
+                }
+               
+                _unitOfWork.Save();
+                TempData["success"] = "Employee Created Successfully";
+                return RedirectToAction("Index", "EmployeeManage");
+            }
+            else
+            {
+                employeeVM.DepartmentList = _unitOfWork.Department.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
+                return View(employeeVM);
+            }
+        }
+
+
+
+        public IActionResult Delete(int? id)
+        {
+            if (id != null && id != 0)
+            {
+                Employee? employeeFromDb = _unitOfWork.Employee.Get(u => u.Id == id);
+                if (employeeFromDb == null)
+                {
+                    return NotFound();
+                }
+
+                return View(employeeFromDb);
+            }
+            return NotFound();
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePOST(int? id)
+        {
+            if (id != null && id != 0)
+            {
+                Employee? obj = _unitOfWork.Employee.Get(u => u.Id == id);
+                _unitOfWork.Employee.Remove(obj);
+                _unitOfWork.Save();
+                // TempData["success"] = "Product Deleted Successfully";
+                return RedirectToAction("Index", "EmployeeManage");
+            }
+            return View();
+        }
 
     }
 }

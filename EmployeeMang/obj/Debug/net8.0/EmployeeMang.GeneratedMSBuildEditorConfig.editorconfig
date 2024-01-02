@@ -18,12 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\anumohan\Desktop\.net\prjct\EmployeeManagement\EmployeeMang
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/EmployeeManage/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVNYW5hZ2VcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/EmployeeManage/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVNYW5hZ2VcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/EmployeeManage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/EmployeeManage/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVNYW5hZ2VcVXBzZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/SkillManage/Index.cshtml]

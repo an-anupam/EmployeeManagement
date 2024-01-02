@@ -15,12 +15,16 @@ namespace EmpMan.DataAccess.Repositories
         private readonly ApplicationDbContext _db;
         public IEmployeeRepository Employee{ get; private set; }
 
-        public ISkillRepository Skill {get; set;}
+        public ISkillRepository Skill {get; private set;}
+
+        public IDepartmentRepository Department {get; private set;}
+
 
         public UnitOfWork(ApplicationDbContext db){
             _db = db;
             Employee = new EmployeeRepository(_db);
             Skill  =  new SkillRepository(_db);
+            Department = new DepartmentRepository(_db);
            
         }
        

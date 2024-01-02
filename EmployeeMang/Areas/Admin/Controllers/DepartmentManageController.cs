@@ -3,29 +3,24 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using EmpMan.DataAccess.Repositories.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using EmpMan.Models;
-using EmpMan.Models.ViewModels;
 
 namespace EmployeeMang.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class SkillManageController : Controller
+    // [Route("[controller]")]
+    public class DepartmentManageController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ILogger<DepartmentManageController> _logger;
 
-        public SkillManageController(IUnitOfWork unitOfWork)
+        public DepartmentManageController(ILogger<DepartmentManageController> logger)
         {
-            _unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
-            List<Skill> objSkillList = 
-               
-            return View(objSkillList);
+            return View();
         }
 
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

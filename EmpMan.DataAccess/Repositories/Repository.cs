@@ -20,6 +20,7 @@ namespace EmpMan.DataAccess.Repositories
         public Repository(ApplicationDbContext db){
             _db = db;
             this.dbSet = _db.Set<T>();
+             _db.Employees.Include(u => u.Department).Include(u => u.DepartmentId);
             // this.dbSet = db.Set<T>();
         }
 
@@ -27,15 +28,34 @@ namespace EmpMan.DataAccess.Repositories
             dbSet.Add(entity);
          }
 
-         public T Get(Expression<Func<T, bool>> filter){
+         public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null){
             IQueryable<T>? query = dbSet;
             query = query.Where(filter);
+           
+            if(!string.IsNullOrEmpty(includeProperties))
+            {
+               foreach (var includeProp in includeProperties
+                      .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+               {
+                  query = query.Include(includeProp);
+               }
+            }
+
             return query.FirstOrDefault();
          }
-
-         public IEnumerable<T> GetAll()
+         
+         //Department, Type
+         public IEnumerable<T> GetAll(string? includeProperties = null)
          {
             IQueryable<T>? query = dbSet;
+            if(!string.IsNullOrEmpty(includeProperties))
+            {
+               foreach(var includeProp in includeProperties
+                      .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+               {
+                  query = query.Include(includeProp);
+               }
+            }
             return query.ToList();
          }
 

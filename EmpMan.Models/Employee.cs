@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 
 namespace EmpMan.Models
@@ -37,11 +38,11 @@ namespace EmpMan.Models
         [DisplayName("Email")]
         [MaxLength(40)]
         public string? Email {get; set;}
-
         
         public int DepartmentId {get; set;}
 
         [ForeignKey("DepartmentId")]
+        [ValidateNever]
         public Department? Department {get; set;}
     }
 }

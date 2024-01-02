@@ -1,0 +1,83 @@
+@* @model Bulky.Models.Category *@
+@* @model Bulky.Models *@
+@* @using Bulky.Models *@
+@model EmployeeVM
+
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-success bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">@(Model.Employee.Id != 0 ? "Update" : "Create") New Employee</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4">
+        <form method="post" class="row">
+            <div class=" border p-3 mt-4">
+                <input asp-for="Employee.Id" hidden />
+                @* <div asp-validation-summary="ModelOnly"></div> *@
+
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Employee.FirstName" class="form-control border-0 shadow" />
+                    <label asp-for="Employee.FirstName" class="ms-2"></label>
+                    <Span asp-validation-for="Employee.FirstName" class="text-danger"></Span>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="Employee.LastName" class="form-control border-0 shadow">
+                    <label asp-for="Employee.LastName" class="ms-2"></label>
+                    <Span asp-validation-for="Employee.LastName" class="text-danger"></Span>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="Employee.DOJ" class="form-control border-0 shadow">
+                    <label asp-for="Employee.DOJ" class="ms-2"></label>
+                    <Span asp-validation-for="Employee.DOJ" class="text-danger"></Span>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="Employee.Designation" class="form-control border-0 shadow">
+                    <label asp-for="Employee.Designation" class="ms-2"></label>
+                    <Span asp-validation-for="Employee.Designation" class="text-danger"></Span>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="Employee.Email" class="form-control border-0 shadow">
+                    <label asp-for="Employee.Email" class="ms-2"></label>
+                    <Span asp-validation-for="Employee.Email" class="text-danger"></Span>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <select asp-for="@Model.Employee.DepartmentId" asp-items="@Model.DepartmentList"
+                        class="form-select border-0 shadow">
+                        <option disabled selected>--Select Category--</option>
+                    </select>
+                    <label asp-for="Employee.DepartmentId" class="ms-2"></label>
+                    <Span asp-validation-for="Employee.DepartmentId" class="text-danger"></Span>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-6 col-md-3">
+                        <button type="submit"
+                            class="btn btn-success form-control">@(Model.Employee.Id != 0 ? "Update" : "Create")</button>
+
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="EmployeeManage" asp-action="Index"
+                            class="btn btn-outline-success form-control">
+                            Back To List
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    @* @section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial.cshtml"/>
+    }
+    } *@

@@ -10,10 +10,13 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace EmpMan.Models.ViewModels
 {
-    public class ProductVM
+    public class EmployeeVM
     {
-        // public Employee? Employee{get; set;}
-
-        // public IEnumerable<SelectListItem>? EmployeeList {get; set;}
+        public Employee? Employee{get; set;}
+        
+        [ValidateNever]
+        public IEnumerable<SelectListItem>? DepartmentList {get; set;}
+        
+        
     }
 }

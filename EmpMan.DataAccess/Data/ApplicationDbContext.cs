@@ -110,37 +110,74 @@ namespace EmpMan.DataAccess.Data
             new Skill
             {
                 Id = 1,
-                PrimarySkill = "Java",
-                SecondarySkill = "JavaScript",
-                ratingsInSkill = 7,
-                experienceInSkill = 3
+                allSkills = "JavaScript",
+                ratingsInSkill = 1,
+                experienceInSkill = 1
             },
             new Skill
             {
                 Id = 2,
-                PrimarySkill = "C++",
-                SecondarySkill = "Swift",
-                ratingsInSkill = 6,
+                allSkills = "Java",
+                ratingsInSkill = 2,
                 experienceInSkill = 2
             },
             new Skill
             {
                 Id = 3,
-                PrimarySkill = "C#",
-                SecondarySkill = "JavaScript",
-                ratingsInSkill = 8,
-                experienceInSkill = 1
+                allSkills = "Python",
+                ratingsInSkill = 3,
+                experienceInSkill = 3
             },
             new Skill
             {
                 Id = 4,
-                PrimarySkill = "Python",
-                SecondarySkill = "Java",
-                ratingsInSkill = 7,
-                experienceInSkill = 2
-            }
-
-          );
+                allSkills = ".Net Frameworks",
+                ratingsInSkill = 4,
+                experienceInSkill = 4
+            },
+             new Skill
+             {
+                 Id = 5,
+                 allSkills = "C++",
+                 ratingsInSkill = 5,
+                 experienceInSkill = 5
+             },
+             new Skill
+             {
+                 Id = 6,
+                 allSkills = "C",
+                 ratingsInSkill = 6,
+                 experienceInSkill = 6
+             },
+             new Skill
+             {
+                 Id = 7,
+                 allSkills = "AWS Cloud",
+                 ratingsInSkill = 7,
+                 experienceInSkill = 7
+             },
+             new Skill
+             {
+                 Id = 8,
+                 allSkills = "Azure Cloud",
+                 ratingsInSkill = 8,
+                 experienceInSkill = 8
+             },
+             new Skill
+             {
+                 Id = 9,
+                 allSkills = "Azure Cloud",
+                 ratingsInSkill = 9,
+                 experienceInSkill = 9
+             },
+             new Skill
+             {
+                 Id = 10,
+                 allSkills = "Azure Cloud",
+                 ratingsInSkill = 10,
+                 experienceInSkill = 10
+             }
+            );
         }
 
     }
