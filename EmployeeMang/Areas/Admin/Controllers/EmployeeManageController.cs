@@ -41,7 +41,7 @@ namespace EmployeeMang.Areas.Admin.Controllers
                 }),
                 Employee = new Employee()
             };
-            if(id == null || id == 0)
+            if (id == null || id == 0)
             {
                 //create
                 return View(employeeVM);
@@ -49,7 +49,7 @@ namespace EmployeeMang.Areas.Admin.Controllers
             else
             {
                 //update
-                employeeVM.Employee = _unitOfWork.Employee.Get(u=>u.Id == id);
+                employeeVM.Employee = _unitOfWork.Employee.Get(u => u.Id == id);
                 return View(employeeVM);
             }
         }
@@ -69,7 +69,7 @@ namespace EmployeeMang.Areas.Admin.Controllers
                 // {
                 //     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                 //     string productPath = Path.Combine(wwwRootPath, @"images\product");
-                    
+
                 //     if(!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                 //     {
                 //         var oldImagePath = Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
@@ -87,13 +87,15 @@ namespace EmployeeMang.Areas.Admin.Controllers
                 //     productVM.Product.ImageUrl = @"\images\product\" + fileName;
                 // }
 
-                if(employeeVM.Employee.Id == 0){
-                   _unitOfWork.Employee.Add(employeeVM.Employee);
+                if (employeeVM.Employee.Id == 0)
+                {
+                    _unitOfWork.Employee.Add(employeeVM.Employee);
                 }
-                else{
-                    _unitOfWork.Employee.Update(employeeVM.Employee); 
+                else
+                {
+                    _unitOfWork.Employee.Update(employeeVM.Employee);
                 }
-               
+
                 _unitOfWork.Save();
                 TempData["success"] = "Employee Created Successfully";
                 return RedirectToAction("Index", "EmployeeManage");
@@ -111,34 +113,75 @@ namespace EmployeeMang.Areas.Admin.Controllers
 
 
 
+        // public IActionResult Delete(int? id)
+        // {
+        //     if (id != null && id != 0)
+        //     {
+        //         Employee? employeeFromDb = _unitOfWork.Employee.Get(u => u.Id == id);
+        //         if (employeeFromDb == null)
+        //         {
+        //             return NotFound();
+        //         }
+
+        //         return View(employeeFromDb);
+        //     }
+        //     return NotFound();
+        // }
+
+        // [HttpPost, ActionName("Delete")]
+        // public IActionResult DeletePOST(int? id)
+        // {
+        //     if (id != null && id != 0)
+        //     {
+        //         Employee? obj = _unitOfWork.Employee.Get(u => u.Id == id);
+        //         _unitOfWork.Employee.Remove(obj);
+        //         _unitOfWork.Save();
+        //         // TempData["success"] = "Product Deleted Successfully";
+        //         return RedirectToAction("Index", "EmployeeManage");
+        //     }
+        //     return View();
+        // }
+
+
+
+
+        #region API CALLS
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<Employee> objEmployeeList = _unitOfWork.Employee.GetAll(includeProperties: "Department").ToList();
+            return Json(new { data = objEmployeeList });
+        }
+
+
+         
         public IActionResult Delete(int? id)
         {
-            if (id != null && id != 0)
+            var employeeToBeDeleted = _unitOfWork.Employee.Get(u => u.Id == id);
+            if (employeeToBeDeleted == null)
             {
-                Employee? employeeFromDb = _unitOfWork.Employee.Get(u => u.Id == id);
-                if (employeeFromDb == null)
-                {
-                    return NotFound();
-                }
-
-                return View(employeeFromDb);
+                return Json(new { success = false, message = "Error while deleting" });
             }
-            return NotFound();
+
+            // string employeePath = @"images\products\product-" + id;
+            // string finalPath = Path.Combine(_webHostEnvironment.WebRootPath, productPath);
+
+            // if (Directory.Exists(finalPath)) {
+            //     string[] filePaths = Directory.GetFiles(finalPath);
+            //     foreach (string filePath in filePaths) {
+            //         System.IO.File.Delete(filePath);
+            //     }
+
+            //     Directory.Delete(finalPath);
+            // }
+            _unitOfWork.Employee.Remove(employeeToBeDeleted);
+            _unitOfWork.Save();
+
+            return Json(new { success = true, message = "Deleted Successful" });
         }
 
-        [HttpPost, ActionName("Delete")]
-        public IActionResult DeletePOST(int? id)
-        {
-            if (id != null && id != 0)
-            {
-                Employee? obj = _unitOfWork.Employee.Get(u => u.Id == id);
-                _unitOfWork.Employee.Remove(obj);
-                _unitOfWork.Save();
-                // TempData["success"] = "Product Deleted Successfully";
-                return RedirectToAction("Index", "EmployeeManage");
-            }
-            return View();
-        }
+        #endregion
 
     }
 }

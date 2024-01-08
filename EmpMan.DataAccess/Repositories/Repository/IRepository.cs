@@ -19,5 +19,6 @@ namespace EmpMan.DataAccess.Repositories.Repository
         void Remove(T entity);
 
         void RemoveRange(IEnumerable<T>entity);
+        
     }
 }

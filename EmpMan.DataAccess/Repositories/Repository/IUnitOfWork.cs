@@ -13,6 +13,8 @@ namespace EmpMan.DataAccess.Repositories.Repository
 
          IDepartmentRepository Department{get; }
 
+         IEmployeeSkillRepository EmployeeSkill{get;}
+
         void Save();
     }
 }

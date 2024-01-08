@@ -19,12 +19,14 @@ namespace EmpMan.DataAccess.Repositories
 
         public IDepartmentRepository Department {get; private set;}
 
+        public IEmployeeSkillRepository EmployeeSkill {get; set;}
 
         public UnitOfWork(ApplicationDbContext db){
             _db = db;
             Employee = new EmployeeRepository(_db);
             Skill  =  new SkillRepository(_db);
             Department = new DepartmentRepository(_db);
+            EmployeeSkill = new EmployeeSkillRepository(_db);
            
         }
        

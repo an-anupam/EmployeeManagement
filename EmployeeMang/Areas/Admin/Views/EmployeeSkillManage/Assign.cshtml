@@ -1,0 +1,56 @@
+@model EmployeeSkillVM
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-dark bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Assign Skill Set</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4">
+        <form method="post" class="row">
+            <input asp-for="Employee.Id" hidden />
+            <div class="form-floating py-2 col-6">
+                <input asp-for="Employee.FirstName" class="form-control border-2 shadow" disabled />
+                <label asp-for="Employee.FirstName" class="ms-2"></label>
+                @* <Span asp-validation-for="Employee.FirstName" class="text-danger"></Span> *@
+            </div>
+            <div class="form-floating py-2 col-6">
+                <input asp-for="Employee.LastName" class="form-control border-2 shadow" disabled />
+                <label asp-for="Employee.LastName" class="ms-2"></label>
+                @* <Span asp-validation-for="Employee.LastName" class="text-danger"></Span> *@
+            </div>
+
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Employee.Id" class="form-control border-2 shadow" disabled />
+                <label asp-for="Employee.Id" class="ms-2">Employee ID</label>
+                @* <Span asp-validation-for="Employee.LastName" class="text-danger"></Span> *@
+                <hr />
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body form-floating py-2 col-12">
+                    <select asp-for="@Model.EmployeeSkill.Id" asp-items="@Model.SkillList"
+                        class="form-select border-0 shadow">
+                        <option disabled selected>--Select Category--</option>
+                    </select>
+                    <label asp-for="EmployeeSkill.Id" class="ms-2 text-success">Primary Skill</label>
+                    @* Rating *@
+                    @* Experience *@
+                </div>
+            </div>
+
+            <div class="row pt-4 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-dark form-control">Update</button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a asp-controller="EmployeeSkillManage" asp-action="Index" class="btn btn-outline-dark form-control">
+                        Back To List
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>

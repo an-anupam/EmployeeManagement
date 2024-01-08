@@ -22,6 +22,8 @@ namespace EmpMan.DataAccess.Data
 
         public DbSet<Skill> Skills { get; set; }
 
+        public DbSet<EmployeeSkill> EmployeeSkills{get; set;}
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -103,6 +105,16 @@ namespace EmpMan.DataAccess.Data
                    Designation = "Sr. Developer",
                    Email = "kurnal@gmail.com",
                    DepartmentId = 1
+               },
+               new Employee
+               {
+                   Id = 6,
+                   FirstName = "Some",
+                   LastName = "Guy",
+                   DOJ = DateOnly.FromDateTime(new DateTime(2021, 12, 4)),
+                   Designation = "Frotend Developer",
+                   Email = "SomeGuy@gmail.com",
+                   DepartmentId = 4
                }
                );
 
@@ -110,74 +122,123 @@ namespace EmpMan.DataAccess.Data
             new Skill
             {
                 Id = 1,
-                allSkills = "JavaScript",
-                ratingsInSkill = 1,
-                experienceInSkill = 1
+                allSkills = "JavaScript"
+                
             },
             new Skill
             {
                 Id = 2,
-                allSkills = "Java",
-                ratingsInSkill = 2,
-                experienceInSkill = 2
+                allSkills = "Java"
+                
             },
             new Skill
             {
                 Id = 3,
-                allSkills = "Python",
-                ratingsInSkill = 3,
-                experienceInSkill = 3
+                allSkills = "Python"
+                
             },
             new Skill
             {
                 Id = 4,
-                allSkills = ".Net Frameworks",
-                ratingsInSkill = 4,
-                experienceInSkill = 4
+                allSkills = ".Net Frameworks"
+                
             },
              new Skill
              {
                  Id = 5,
-                 allSkills = "C++",
-                 ratingsInSkill = 5,
-                 experienceInSkill = 5
+                 allSkills = "C++"
+                
              },
              new Skill
              {
                  Id = 6,
-                 allSkills = "C",
-                 ratingsInSkill = 6,
-                 experienceInSkill = 6
+                 allSkills = "C"
+                 
              },
              new Skill
              {
                  Id = 7,
-                 allSkills = "AWS Cloud",
-                 ratingsInSkill = 7,
-                 experienceInSkill = 7
+                 allSkills = "AWS Cloud"
+                
              },
              new Skill
              {
                  Id = 8,
-                 allSkills = "Azure Cloud",
-                 ratingsInSkill = 8,
-                 experienceInSkill = 8
+                 allSkills = "Azure Cloud"
+                
              },
              new Skill
              {
                  Id = 9,
-                 allSkills = "Azure Cloud",
-                 ratingsInSkill = 9,
-                 experienceInSkill = 9
+                 allSkills = "Azure Cloud"
+                 
              },
              new Skill
              {
                  Id = 10,
-                 allSkills = "Azure Cloud",
-                 ratingsInSkill = 10,
-                 experienceInSkill = 10
+                 allSkills = "Azure Cloud"
+                
              }
             );
+
+        modelBuilder.Entity<EmployeeSkill>().HasData(
+            new EmployeeSkill
+            {
+                Id = 1,
+                EmployeeId = 1,
+                SkillId = 1,
+                ratingsInSkill=1,
+                experienceInSkill=1
+            },
+
+             new EmployeeSkill
+            {
+                Id = 2,
+                EmployeeId = 3,
+                SkillId = 2,
+                ratingsInSkill=4,
+                experienceInSkill=3
+            },
+
+             new EmployeeSkill
+            {
+                Id = 3,
+                EmployeeId = 4,
+                SkillId = 4,
+                ratingsInSkill=4,
+                experienceInSkill=4
+            },
+
+             new EmployeeSkill
+            {
+                Id = 4,
+                EmployeeId = 2,
+                SkillId = 6,
+                ratingsInSkill=8,
+                experienceInSkill=5
+            },
+
+             new EmployeeSkill
+            {
+                Id = 5,
+                EmployeeId = 5,
+                SkillId = 8,
+                ratingsInSkill=1,
+                experienceInSkill=1
+            },
+
+             new EmployeeSkill
+            {
+                Id = 6,
+                EmployeeId = 6,
+                SkillId = 9,
+                ratingsInSkill=8,
+                experienceInSkill=7
+            }
+
+        );   
+        
+
         }
 
     }

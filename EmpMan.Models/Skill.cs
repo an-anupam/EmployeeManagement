@@ -18,24 +18,7 @@ namespace EmpMan.Models
         [DisplayName("Skill")]
         public string? allSkills {get; set;}
 
-        //  [Required]
-        // [DisplayName("Secondary Skill")]
-        // public string? SecondarySkill {get; set;}
         
-        [Required]
-        [DisplayName("Ratings on Skill")]
-        public int ratingsInSkill {get; set;}
-        
-        [Required]
-        [DisplayName("Experiences in Skills")]
-        [Range(1,40, ErrorMessage = "Experience Skill Must be between 1-40")]
-        public int experienceInSkill {get; set;}
-    
-        public int EmployeeId { get; set; }
-
-        // Navigation property to link the Skill with the corresponding Employee
-        [ForeignKey("EmployeeId")]
-        public Employee? Employee { get; set; }
     
     }
 }

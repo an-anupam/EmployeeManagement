@@ -30,6 +30,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVNYW5hZ2VcVXBzZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/EmployeeSkillManage/Assign.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVTa2lsbE1hbmFnZVxBc3NpZ24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/EmployeeSkillManage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVTa2lsbE1hbmFnZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/SkillManage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2tpbGxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,6 +48,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/SuperAdmin/Views/DepartmentManage/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xEZXBhcnRtZW50TWFuYWdlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/SuperAdmin/Views/DepartmentManage/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xEZXBhcnRtZW50TWFuYWdlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/SuperAdmin/Views/DepartmentManage/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xEZXBhcnRtZW50TWFuYWdlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/SuperAdmin/Views/DepartmentManage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xEZXBhcnRtZW50TWFuYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/SuperAdmin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/SuperAdmin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/User/Views/Home/Index.cshtml]

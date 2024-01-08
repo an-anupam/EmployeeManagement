@@ -143,22 +143,30 @@ namespace EmpMan.DataAccess.Migrations
                             Email = "kurnal@gmail.com",
                             FirstName = "Kurnal",
                             LastName = "Das"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DOJ = new DateOnly(2021, 12, 4),
+                            DepartmentId = 4,
+                            Designation = "Frotend Developer",
+                            Email = "SomeGuy@gmail.com",
+                            FirstName = "Some",
+                            LastName = "Guy"
                         });
                 });
 
-            modelBuilder.Entity("EmpMan.Models.Skill", b =>
+            modelBuilder.Entity("EmpMan.Models.EmployeeSkill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("PrimarySkill")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("SecondarySkill")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("SkillId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("experienceInSkill")
                         .HasColumnType("INTEGER");
@@ -168,40 +176,127 @@ namespace EmpMan.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("SkillId");
+
+                    b.ToTable("EmployeeSkills");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EmployeeId = 1,
+                            SkillId = 1,
+                            experienceInSkill = 1,
+                            ratingsInSkill = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            EmployeeId = 3,
+                            SkillId = 2,
+                            experienceInSkill = 3,
+                            ratingsInSkill = 4
+                        },
+                        new
+                        {
+                            Id = 3,
+                            EmployeeId = 4,
+                            SkillId = 4,
+                            experienceInSkill = 4,
+                            ratingsInSkill = 4
+                        },
+                        new
+                        {
+                            Id = 4,
+                            EmployeeId = 2,
+                            SkillId = 6,
+                            experienceInSkill = 5,
+                            ratingsInSkill = 8
+                        },
+                        new
+                        {
+                            Id = 5,
+                            EmployeeId = 5,
+                            SkillId = 8,
+                            experienceInSkill = 1,
+                            ratingsInSkill = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            EmployeeId = 6,
+                            SkillId = 9,
+                            experienceInSkill = 7,
+                            ratingsInSkill = 8
+                        });
+                });
+
+            modelBuilder.Entity("EmpMan.Models.Skill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("allSkills")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
                     b.ToTable("Skills");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            PrimarySkill = "Java",
-                            SecondarySkill = "JavaScript",
-                            experienceInSkill = 3,
-                            ratingsInSkill = 7
+                            allSkills = "JavaScript"
                         },
                         new
                         {
                             Id = 2,
-                            PrimarySkill = "C++",
-                            SecondarySkill = "Swift",
-                            experienceInSkill = 2,
-                            ratingsInSkill = 6
+                            allSkills = "Java"
                         },
                         new
                         {
                             Id = 3,
-                            PrimarySkill = "C#",
-                            SecondarySkill = "JavaScript",
-                            experienceInSkill = 1,
-                            ratingsInSkill = 8
+                            allSkills = "Python"
                         },
                         new
                         {
                             Id = 4,
-                            PrimarySkill = "Python",
-                            SecondarySkill = "Java",
-                            experienceInSkill = 2,
-                            ratingsInSkill = 7
+                            allSkills = ".Net Frameworks"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            allSkills = "C++"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            allSkills = "C"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            allSkills = "AWS Cloud"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            allSkills = "Azure Cloud"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            allSkills = "Azure Cloud"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            allSkills = "Azure Cloud"
                         });
                 });
 
@@ -214,6 +309,25 @@ namespace EmpMan.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("EmpMan.Models.EmployeeSkill", b =>
+                {
+                    b.HasOne("EmpMan.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EmpMan.Models.Skill", "Skill")
+                        .WithMany()
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Skill");
                 });
 #pragma warning restore 612, 618
         }

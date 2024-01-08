@@ -23,9 +23,9 @@ namespace EmployeeMang.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<Skill> objSkillList = 
+            // List<Skill> objSkillList = 
                
-            return View(objSkillList);
+            return View();
         }
 
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

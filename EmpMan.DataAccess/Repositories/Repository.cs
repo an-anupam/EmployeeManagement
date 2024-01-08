@@ -22,6 +22,7 @@ namespace EmpMan.DataAccess.Repositories
             this.dbSet = _db.Set<T>();
              _db.Employees.Include(u => u.Department).Include(u => u.DepartmentId);
             // this.dbSet = db.Set<T>();
+            _db.EmployeeSkills.Include(u => u.Skill).Include(u=>u.SkillId).Include(u=> u.Employee).Include(u=>u.EmployeeId);
         }
 
          public void Add(T entity){
@@ -50,10 +51,9 @@ namespace EmpMan.DataAccess.Repositories
             IQueryable<T>? query = dbSet;
             if(!string.IsNullOrEmpty(includeProperties))
             {
-               foreach(var includeProp in includeProperties
-                      .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+               foreach(var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                {
-                  query = query.Include(includeProp);
+                  query = query.Include(includeProp.Trim());
                }
             }
             return query.ToList();
