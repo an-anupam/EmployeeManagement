@@ -38,8 +38,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVTa2lsbE1hbmFnZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/SkillManage/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2tpbGxNYW5hZ2VcSW5kZXguY3NodG1s
+[C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/EmployeeSkillManage/UpdateSkill.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRW1wbG95ZWVTa2lsbE1hbmFnZVxVcGRhdGVTa2lsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/anumohan/Desktop/.net/prjct/EmployeeManagement/EmployeeMang/Areas/Admin/Views/_ViewImports.cshtml]

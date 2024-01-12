@@ -32,9 +32,9 @@
                 </div>
 
                 <div class=" form-floating py-2 col-12">
-                    <input asp-for="Employee.DOJ" class="form-control border-1 shadow">
+                    <input asp-for="Employee.DOJ" type="date" class="form-control border-1 shadow">
                     <label asp-for="Employee.DOJ" class="ms-2"></label>
-                    <Span asp-validation-for="Employee.DOJ" class="text-danger"></Span>
+                    <Span asp-validation-for="Employee.DOJ" type="date" class="text-danger"></Span>
                 </div>
 
                 <div class=" form-floating py-2 col-12">
@@ -52,7 +52,7 @@
                 <div class=" form-floating py-2 col-12">
                     <select asp-for="@Model.Employee.DepartmentId" asp-items="@Model.DepartmentList"
                         class="form-select border-1 shadow">
-                        <option disabled selected>--Select Category--</option>
+                        <option disabled selected>--Select Department--</option>
                     </select>
                     <label asp-for="Employee.DepartmentId" class="ms-2"></label>
                     <Span asp-validation-for="Employee.DepartmentId" class="text-danger"></Span>
@@ -76,8 +76,8 @@
         </form>
     </div>
 
-    @* @section Scripts{
+    @section Scripts{
     @{
     <partial name="_ValidationScriptsPartial.cshtml"/>
     }
-    } *@
+    }

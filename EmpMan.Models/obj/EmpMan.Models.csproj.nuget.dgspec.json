@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {}
+    "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {
+    "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
+        "projectUniqueName": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
         "projectName": "EmpMan.Models",
-        "projectPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
+        "projectPath": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
         "packagesPath": "C:\\Users\\anumohan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\obj\\",
+        "outputPath": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anumohan\\AppData\\Roaming\\NuGet\\NuGet.Config"

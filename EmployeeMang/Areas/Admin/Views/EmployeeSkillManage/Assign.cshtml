@@ -12,33 +12,62 @@
     <div class="card-body p-4">
         <form method="post" class="row">
             <input asp-for="Employee.Id" hidden />
+
             <div class="form-floating py-2 col-6">
                 <input asp-for="Employee.FirstName" class="form-control border-2 shadow" disabled />
                 <label asp-for="Employee.FirstName" class="ms-2"></label>
-                @* <Span asp-validation-for="Employee.FirstName" class="text-danger"></Span> *@
+                <Span asp-validation-for="Employee.FirstName" class="text-danger"></Span>
             </div>
             <div class="form-floating py-2 col-6">
                 <input asp-for="Employee.LastName" class="form-control border-2 shadow" disabled />
                 <label asp-for="Employee.LastName" class="ms-2"></label>
-                @* <Span asp-validation-for="Employee.LastName" class="text-danger"></Span> *@
+                <Span asp-validation-for="Employee.LastName" class="text-danger"></Span>
             </div>
 
             <div class="form-floating py-2 col-12">
                 <input asp-for="Employee.Id" class="form-control border-2 shadow" disabled />
                 <label asp-for="Employee.Id" class="ms-2">Employee ID</label>
-                @* <Span asp-validation-for="Employee.LastName" class="text-danger"></Span> *@
+                <Span asp-validation-for="Employee.LastName" class="text-danger"></Span>
                 <hr />
             </div>
 
-            <div class="card" style="width: 18rem;">
-                <div class="card-body form-floating py-2 col-12">
-                    <select asp-for="@Model.EmployeeSkill.Id" asp-items="@Model.SkillList"
-                        class="form-select border-0 shadow">
-                        <option disabled selected>--Select Category--</option>
-                    </select>
-                    <label asp-for="EmployeeSkill.Id" class="ms-2 text-success">Primary Skill</label>
-                    @* Rating *@
-                    @* Experience *@
+            @* <div class="card" style="width: 18rem;">
+            <div class="card-body form-floating py-2 col-12">
+            <select asp-for="@Model.EmployeeSkill.Id" asp-items="@Model.SkillList"
+            class="form-select border-0 shadow">
+            <option disabled selected>--Select Skill--</option>
+            </select>
+            <label asp-for="EmployeeSkill.Id" class="ms-2 text-success">Primary Skill</label>
+
+            </div>
+            </div> *@
+
+
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div>Primary Skills</div>
+                    <div>
+                        @* <button onclick="AssignSkill(this)" data-skill='@Json.Serialize(@Model)' type="button"
+                            class="btn btn-primary">
+                            New Skill
+                        </button> *@
+                         <a asp-controller="EmployeeSkillManage" asp-action="UpdateSkill"
+                           asp-route-id="@Model.Employee.Id" class="btn btn-info form-control">
+                            Assign Skill
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        @foreach (var obj in Model.EmployeeSkills)
+                        {
+                            <h5 class="card-title"><strong>Tech:</strong> @obj.Skill.allSkills</h5>
+                            <p class="card-text">
+                                <strong>Ratings:</strong> @obj.ratingsInSkill<br />
+                                <strong>Experience:</strong> @obj.experienceInSkill years
+                            </p>
+                        }
+                    </div>
                 </div>
             </div>
 
@@ -47,10 +76,119 @@
                     <button type="submit" class="btn btn-dark form-control">Update</button>
                 </div>
                 <div class="col-6 col-md-3">
-                    <a asp-controller="EmployeeSkillManage" asp-action="Index" class="btn btn-outline-dark form-control">
+                    <a asp-controller="EmployeeSkillManage" asp-action="Index"
+                        class="btn btn-outline-dark form-control">
                         Back To List
                     </a>
                 </div>
             </div>
         </form>
     </div>
+
+
+    @section Scripts {
+
+        @{
+            <partial name="_ValidationScriptsPartial.cshtml" />
+        }
+
+        @* <script>
+            var dataTable;
+
+            function AssignSkill(button) {
+                var skillProperties = [];
+            @* console.log(button); *@
+                @* var employeeSkillVMJson = button.getAttribute('data-skill');
+                var employeeSkillVM = JSON.parse(employeeSkillVMJson);
+                console.log(employeeSkillVM); *@
+
+            @* for(var i=0;i<12;i++){
+                var key = employeeSkillVM.skillList[i].text + ' ' + employeeSkillVM.skillList[i].value;
+                skillProperties[key] = employeeSkillVM.skillList[i].value;
+
+                }; *@
+
+
+                @* for (let i = 0; i < employeeSkillVM.skillList.length; i++) {
+                    skillProperties.push(employeeSkillVM.skillList[i].text);
+                }
+
+                console.log(skillProperties);
+                Swal.fire({
+                    title: 'Select Skill',
+                    input: 'select',
+                    inputOptions: skillProperties,
+                    inputPlaceholder: 'Select a skill',
+                    showCancelButton: true,
+                    inputValidator: (value) => {
+                        if (!value) {
+                            return 'You need to select a skill!';
+                        }
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: 'Enter Ratings',
+                            input: 'text',
+                            inputPlaceholder: 'Enter ratings',
+                            showCancelButton: true,
+                            inputValidator: (value) => {
+                                if (!value) {
+                                    return 'You need to enter ratings!';
+                                }
+                            }
+                        }).then((ratingsResult) => {
+                            if (ratingsResult.isConfirmed) {
+                                Swal.fire({
+                                    title: 'Enter Experience',
+                                    input: 'text',
+                                    inputPlaceholder: 'Enter experience',
+                                    showCancelButton: true,
+                                    inputValidator: (value) => {
+                                        if (!value) {
+                                            return 'You need to enter experience!';
+                                        }
+                                    }
+                                }).then((experienceResult) => {
+                                    if (experienceResult.isConfirmed) {
+                                        Swal.fire(`You have selected ${result.value} with ${ratingsResult.value} ratings and ${experienceResult.value} years of experience.`);
+
+                                        var selectedSkill = result.value;
+                                        var ratings = ratingsResult.value;
+                                        var experience = experienceResult.value;
+                                        // Make an AJAX POST request to the server *@
+                                        @* console.log(selectedSkill + " " + ratings + " " + experience); *@
+                                        @* $.ajax(
+                                            {
+                                                url: '/Admin/EmployeeSkillManage/UpdateSkill',
+                                                type: 'POST',
+                                                data: {
+                                                    selectedSkill: selectedSkill,
+                                                    ratings: ratings,
+                                                    experience: experience
+                                                },
+                                                success: function (data) {
+                                                    // Handle the response from the server (if needed)
+                                                    console.log(data);
+                                                    // Assuming you want to reload a data table and show a success message
+                                                    // You might need to adjust this part based on your application structure
+                                                    dataTable.ajax.reload();
+                                                    toastr.success(data.message);
+                                                },
+                                                error: function (error) {
+                                                    // Handle any errors that occur during the AJAX request
+                                                    console.error('Error:', error);
+                                                }
+                                            });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            } *@
+        @* </script> *@
+
+
+
+    }

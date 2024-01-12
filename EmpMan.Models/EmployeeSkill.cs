@@ -18,7 +18,7 @@ namespace EmpMan.Models
         [ForeignKey("EmployeeId")]
         public Employee? Employee { get; set; }
 
-        public int SkillId { get; set; }
+         public int SkillId { get; set; }
         [ForeignKey("SkillId")]
         public Skill? Skill { get; set; }
 

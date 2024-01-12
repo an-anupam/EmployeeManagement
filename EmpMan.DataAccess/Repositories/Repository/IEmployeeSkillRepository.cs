@@ -9,5 +9,8 @@ namespace EmpMan.DataAccess.Repositories.Repository
     public interface IEmployeeSkillRepository : IRepository<EmployeeSkill>
     {
         void Update(EmployeeSkill obj);
+
+
+        IEnumerable<EmployeeSkill> GetByEmployeeId(int id, string? includeProperties = null);
     }
 }

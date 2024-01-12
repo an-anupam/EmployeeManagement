@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\images\\CGlogo.png",
+      "PackagePath": "staticwebassets\\images\\CGlogo.png"
+    },
+    {
+      "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\images\\image.png",
+      "PackagePath": "staticwebassets\\images\\image.png"
+    },
+    {
       "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\js\\department.js",
       "PackagePath": "staticwebassets\\js\\department.js"
     },

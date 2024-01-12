@@ -2644,11 +2644,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.DataAccess\\EmpMan.DataAccess.csproj",
+      "projectUniqueName": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.DataAccess\\EmpMan.DataAccess.csproj",
       "projectName": "EmpMan.DataAccess",
-      "projectPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.DataAccess\\EmpMan.DataAccess.csproj",
+      "projectPath": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.DataAccess\\EmpMan.DataAccess.csproj",
       "packagesPath": "C:\\Users\\anumohan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.DataAccess\\obj\\",
+      "outputPath": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\anumohan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2663,8 +2663,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {
-              "projectPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj"
+            "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {
+              "projectPath": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj"
             }
           }
         }
