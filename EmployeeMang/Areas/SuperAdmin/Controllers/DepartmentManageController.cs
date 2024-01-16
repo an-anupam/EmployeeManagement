@@ -5,12 +5,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmpMan.DataAccess.Repositories.Repository;
 using EmpMan.Models;
+using EmpMan.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace EmployeeMang.Areas.SuperAdmin.Controllers
 {
     [Area("SuperAdmin")]
+    [Authorize(Roles =  SD.Role_SuperAdmin)]
     public class DepartmentManageController : Controller
     {
 
@@ -49,7 +52,7 @@ namespace EmployeeMang.Areas.SuperAdmin.Controllers
 
                 _unitOfWork.Department.Add(obj);
                 _unitOfWork.Save();
-                //  TempData["success"]="Category Created Successfully";
+                 TempData["success"]="Department Created Successfully";
                 return RedirectToAction("Index", "DepartmentManage");
             }
             return View();
@@ -81,7 +84,7 @@ namespace EmployeeMang.Areas.SuperAdmin.Controllers
             {
                 _unitOfWork.Department.Update(obj);
                 _unitOfWork.Save();
-                //   TempData["success"]="Category Updated Successfully";
+                  TempData["success"]="Department Updated Successfully";
                 return RedirectToAction("Index", "DepartmentManage");
             }
             return View();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {}
+    "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {}
   },
   "projects": {
-    "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {
+    "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
+        "projectUniqueName": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
         "projectName": "EmpMan.Models",
-        "projectPath": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
+        "projectPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\EmpMan.Models.csproj",
         "packagesPath": "C:\\Users\\anumohan\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\obj\\",
+        "outputPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anumohan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -66,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

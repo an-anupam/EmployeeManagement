@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\images\\image.png"
     },
     {
+      "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\js\\Home.js",
+      "PackagePath": "staticwebassets\\js\\Home.js"
+    },
+    {
       "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\js\\department.js",
       "PackagePath": "staticwebassets\\js\\department.js"
     },
@@ -33,8 +37,16 @@
       "PackagePath": "staticwebassets\\js\\employeeSkill.js"
     },
     {
+      "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\js\\imp.js",
+      "PackagePath": "staticwebassets\\js\\imp.js"
+    },
+    {
       "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\js\\skill.js",
+      "PackagePath": "staticwebassets\\js\\skill.js"
     },
     {
       "Id": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmployeeMang\\wwwroot\\lib\\bootstrap\\LICENSE",

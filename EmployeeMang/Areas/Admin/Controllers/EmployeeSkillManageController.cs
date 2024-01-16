@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using EmpMan.DataAccess.Repositories.Repository;
 using EmpMan.Models;
 using EmpMan.Models.ViewModels;
+using EmpMan.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
@@ -13,6 +15,7 @@ using Microsoft.Extensions.Logging;
 namespace EmployeeMang.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles =  SD.Role_Admin)]
     public class EmployeeSkillManageController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -122,10 +125,9 @@ namespace EmployeeMang.Areas.Admin.Controllers
                  else{
                    _unitOfWork.EmployeeSkill.Add(employeeSkillVM.EmployeeSkill);
                  }
-                
-                            
+                      
                 _unitOfWork.Save();
-                TempData["success"] = "Employee Created Successfully";
+                TempData["success"] = "Assigned Skill Successfully";
                 return RedirectToAction("Index", "EmployeeSkillManage");
             }
             else

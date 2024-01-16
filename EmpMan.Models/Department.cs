@@ -14,7 +14,7 @@ namespace EmpMan.Models
         [Key]
         public int Id {get; set;}
         
-        [Required]
+        [Required(ErrorMessage = "Department Name is required")]
         [MaxLength(20)] 
         public string? Name {get; set;}
     }

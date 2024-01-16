@@ -6,14 +6,17 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
-    
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
-    <!-- <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0"/> -->
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0"/>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0"/>
   </ItemGroup>
-    <ItemGroup>
-    <ProjectReference Include="..\EmpMan.DataAccess\EmpMan.DataAccess.csproj" />
-    <ProjectReference Include="..\EmpMan.Models\EmpMan.Models.csproj" />
+  <ItemGroup>
+    <ProjectReference Include="..\EmpMan.DataAccess\EmpMan.DataAccess.csproj"/>
+    <ProjectReference Include="..\EmpMan.Models\EmpMan.Models.csproj"/>
+    <ProjectReference Include="..\EmpMan.Utility\EmpMan.Utility.csproj"/>
   </ItemGroup>
 </Project>

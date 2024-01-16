@@ -1,0 +1,85 @@
+@model EmployeeSkillVM;
+
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-dark bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2"> Employee Details </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4">
+        <form method="post" class="row" asp-action="UpdateSkill">
+            <div class=" border p-3 mt-4 bg- ">
+                <input asp-for="Employee.Id" hidden />
+                @* <input asp-for="EmployeeSkill.Id" hidden /> *@
+                @* <input asp-for="EmployeeSkill.EmployeeId" value="@Model.Employee.Id" hidden />- *@
+                @* <div asp-validation-summary="ModelOnly"></div> *@
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="@Model.Employee.FirstName" class="form-control border-1 shadow" disabled/>
+                    <label asp-for="Employee.FirstName" class="ms-2"></label>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Employee.LastName" class="form-control border-1 shadow" disabled/>
+                    <label asp-for="Employee.LastName" class="ms-2"></label>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="Employee.Email" class="form-control border-1 shadow" disabled>
+                    <label asp-for="Employee.Email" class="ms-2"></label>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="Employee.Designation" class="form-control border-1 shadow" disabled>
+                    <label asp-for="Employee.Designation" class="ms-2"></label>
+                </div>
+
+                <div class=" form-floating py-2 col-12">
+                    <input asp-for="Employee.DOJ" class="form-control border-1 shadow" disabled>
+                    <label asp-for="Employee.DOJ" class="ms-2"></label>
+                </div>
+
+                @foreach (var obj in Model.EmployeeSkills)
+                {
+                    <div class=" form-floating py-2 col-12">
+                        <input asp-for="@obj.Skill.allSkills" class="form-control border-1 shadow" disabled>
+                        <label asp-for="@obj.Skill.allSkills" class="ms-2"></label>
+                    </div>
+
+                    <div class=" form-floating py-2 col-12">
+                        <input asp-for="@obj.ratingsInSkill" class="form-control border-1 shadow" disabled>
+                        <label asp-for="@obj.ratingsInSkill" class="ms-2"></label>
+                    </div>
+
+                    <div class=" form-floating py-2 col-12">
+                        <input asp-for="@obj.experienceInSkill" class="form-control border-1 shadow" disabled>
+                        <label asp-for="@obj.experienceInSkill" class="ms-2"></label>
+                    </div>
+                }
+
+                <div class="row pt-4 justify-content-center">
+                    @* <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-dark form-control no-hover">Update</button>
+
+                    </div> *@
+                    <div class="col-6 col-md-6">
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-dark form-control">
+                            Back To List
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+}

@@ -1,0 +1,62 @@
+@* @using System.Collections.Generic
+@model List<Bulky.Models.Category> *@
+@model List<Skill>
+@* @using Bulky.Models *@
+
+
+@* <partial name="_Notification"/> *@
+<div class="container">
+
+<div class="row pt-4 pb-3">
+   
+    <div class="col-6">
+      <h2 class="text-primary">
+        Skills List
+      </h2>
+    </div>
+    <div class="col-6 text-end">
+      <a asp-controller="SkillManage" asp-action="Create" class="btn btn-outline-info">
+      <i class="bi bi-plus-circle"></i> Add New Skill
+      </a>
+    </div>
+   
+</div>
+
+<table  id="SkillTable" class=" table table-bordered table-striped">
+   <thead >
+    <tr>
+      <th>
+        Skill Id
+      </th>
+      <th>
+        Skill Name
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+      @foreach(var obj in Model.OrderBy(order => order.Id)){
+       <tr>
+         <td>@obj.Id</td>
+         <td>@obj.allSkills</td>
+         <td>
+          <div class="w-75 btn-group" role="group">
+             <a asp-controller="SkillManage" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-info mx-2">
+                  <i class="bi bi-pencil-square"></i>Edit            
+             </a>
+             <a asp-controller="SkillManage" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                  <i class="bi bi-trash"></i> Delete
+             </a>
+             </div>
+         </td>
+       </tr>
+       }
+    </tbody>
+</table>
+</div>
+
+
+@section Scripts {
+  <script src="~/js/skill.js"></script>
+}

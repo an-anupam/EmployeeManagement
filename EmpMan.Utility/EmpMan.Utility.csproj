@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0"/>
+    <!-- <PackageReference Include="Microsoft.AspNetCore.Identity.UI.Services" Version="8.0.0" /> -->
+     <!-- <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0-preview.2.23153.2" /> -->
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- <ProjectReference Include="..\EmployeeMang\EmployeeMang.csproj"/> -->
+  </ItemGroup>
+</Project>

@@ -7,6 +7,8 @@ using EmpMan.DataAccess.Data;
 using EmpMan.DataAccess.Repositories.Repository;
 using EmpMan.Models;
 using EmpMan.Models.ViewModels;
+using EmpMan.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
@@ -15,6 +17,7 @@ using Microsoft.Extensions.Logging;
 namespace EmployeeMang.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles =  SD.Role_Admin)]
     public class EmployeeManageController : Controller
     {
         private readonly IUnitOfWork? _unitOfWork;

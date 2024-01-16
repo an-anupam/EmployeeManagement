@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using EmpMan.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 
 
 namespace EmpMan.DataAccess.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -24,9 +26,12 @@ namespace EmpMan.DataAccess.Data
 
         public DbSet<EmployeeSkill> EmployeeSkills{get; set;}
 
+        public DbSet<ApplicationUser> applicationUsers {get; set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+              base.OnModelCreating(modelBuilder);
+          
             modelBuilder.Entity<Department>().HasData(
               new Department
               {

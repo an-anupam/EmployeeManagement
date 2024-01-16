@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Utility\\EmpMan.Utility.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Utility\\EmpMan.Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Utility\\EmpMan.Utility.csproj",
+        "projectName": "EmpMan.Utility",
+        "projectPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Utility\\EmpMan.Utility.csproj",
+        "packagesPath": "C:\\Users\\anumohan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anumohan\\Desktop\\.net\\prjct\\EmployeeManagement\\EmpMan.Utility\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anumohan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
